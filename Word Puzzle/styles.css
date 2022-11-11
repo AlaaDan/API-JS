@@ -1,0 +1,8 @@
+input{
+    display: inline-block;
+    max-width: 40px;
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
