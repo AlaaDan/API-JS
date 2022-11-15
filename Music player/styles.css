@@ -1,0 +1,72 @@
+body{
+    margin: 50px auto;
+    width: max-content;
+}
+.music_section{
+    
+    width: 400px;
+    height: 700px;
+    box-shadow: 0 0 30px gray;
+    border-radius: 10px;
+    background-image: url(/back.gif);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: black;
+}
+img{
+    width: 400px;
+    border-radius: 10px;
+    
+}
+input, button{
+    margin-top: 20px;
+    position: relative;
+    left: 40px;
+    text-align: center;
+}
+
+audio{
+    position: relative;
+    top: 20px;
+    left: 50px;
+}
+#search_button{
+    background-color: #C539B4;
+    color: #fff;
+    border: none;
+    width: 70px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 1rem;
+    box-shadow: 0 0 5px #fff;
+
+}
+input[placeholder]{
+    width: 250px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 0 20px #C539B4;
+}
+
+.songs_list{
+    position: relative;
+    bottom: 700px;
+    right: 550px;
+    width: 500px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 0 30px gray;
+}
+p{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 10px 20px;
+}
