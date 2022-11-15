@@ -30,11 +30,11 @@ async function gameEngin (object, newWord) {
     let allInputs = document.querySelectorAll("input");
     //console.log(newWord)
     
-    allInputs.forEach((input, index)=>{
-        if(input.value === object.startWord[index])
-            postion = index
+    // allInputs.forEach((input, index)=>{
+    //     if(input.value === object.startWord[index])
+    //         postion = index
         
-    })
+    // })
     
     let diff = 0;
     for (let i = 0; i < newWord.length; i++) {
