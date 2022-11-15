@@ -1,8 +1,30 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
+
 input{
     display: inline-block;
-    max-width: 40px;
+    max-width: 100px;
     text-align: center;
-    font-size: 2rem;
     text-transform: uppercase;
 }
 
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FCDDB0;
+}
+.word-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+ul{
+    margin: 0 ;
+    
+}

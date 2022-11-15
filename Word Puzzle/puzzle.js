@@ -28,10 +28,8 @@ async function gameEngin (object, newWord) {
     const BASE_URL = 'https://api.dictionaryapi.dev/api/v2/entries/en/';
     let postion = 0;
     let allInputs = document.querySelectorAll("input");
-    console.log(newWord)
-    if(newWord === object.endWord) {
-        alert("You win");
-    }
+    //console.log(newWord)
+    
     allInputs.forEach((input, index)=>{
         if(input.value === object.startWord[index])
             postion = index
@@ -46,16 +44,36 @@ async function gameEngin (object, newWord) {
     }
     
     if (diff === 1) {
-        let response = await fetch(`${BASE_URL}${newWord}`);
-        if(response.status === 404){
-            newWord = object.startWord
-            alert("This word is not an valid English word ")
+        if(newWord === object.endWord) {
+            alert("You win");
+            location.reload()
         }
         else{
-            object.startWord = newWord
-        }
-        console.log(response);
+            let response = await fetch(`${BASE_URL}${newWord}`);
+            if(response.status === 404){
+                allInputs.forEach((x, index) =>{
+                    x.value = object.startWord[index];
         
+                })
+                alert("This word is not an valid English word ")
+            }
+            else{
+                object.startWord = newWord
+                let rightWords = document.createElement('li');
+                rightWords.innerHTML = `<li>${object.startWord}</li>`;
+                document.querySelector('.right_words').append(rightWords);
+                //console.log(rightWords)
+                //document.querySelector('.right_words').innerHTML = `<li>${object.startWord}</li>`
+                
+            }
+            //console.log(response);
+        }
+        
+    }
+    else{
+        allInputs.forEach((x, index) =>{
+            x.value = object.startWord[index];
+        })
     }
     
 }
@@ -82,9 +100,10 @@ function gettingNewWord(wordObject){
 function createWordInput(word){
     let wordObject = word;
     let section = document.querySelector('.word-box');
-    let message = document.createElement('h2')
+    let message = document.createElement('h2');
+    let div = document.querySelector('div');
     message.innerText = `${word.msg}`;
-    section.append(message);
+    div.append(message)
     for (let i = 0; i < word.startWord.length; i++) {
         //console.log(i);
         let inputtoHMTL = document.createElement('input');
