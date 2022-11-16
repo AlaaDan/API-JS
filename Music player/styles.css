@@ -10,7 +10,7 @@ body{
     
 }
 .disco{
-    background-image: url(/disco.gif);
+    background-image: url(images/disco.gif);
     background-repeat: no-repeat;
     background-size:100%;
 }
@@ -26,7 +26,7 @@ body{
     background-color: black;
 }
 .back{
-    background-image: url(/back.gif);
+    background-image: url(images/back.gif);
 }
 img{
     width: 300px;
