@@ -53,8 +53,21 @@ async function getApi(searchString){
 }
 
 
-document.querySelector('#search_button').addEventListener('click', function(){
-    const searchString = document.querySelector('input').value;
-    //console.log(searchString)
-    getApi(searchString)
-})
+
+
+function query(){
+    document.querySelector('#search_button').addEventListener('click', function(){
+        const searchString = document.querySelector('input').value;
+        //console.log(searchString)
+        getApi(searchString)
+    })
+
+    document.querySelector('input').addEventListener('keydown', (event)=>{
+        if(event.key === 'Enter'){
+            const SearchStringKeydown = document.querySelector('input').value
+            getApi(SearchStringKeydown)
+        }
+    })
+}
+
+query()
