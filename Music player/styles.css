@@ -5,7 +5,7 @@ body{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin: 50px auto;
+    margin: 20px auto;
     background-color: black;
     
 }
@@ -16,8 +16,8 @@ body{
 }
 .music_section{
     margin-right: 40px;
-    width: 400px;
-    height: 700px;
+    width: 300px;
+    height: 600px;
     box-shadow: 0 0 20px #C539B4;
     border-radius: 10px;
     background-position: bottom;
@@ -29,27 +29,28 @@ body{
     background-image: url(/back.gif);
 }
 img{
-    width: 400px;
+    width: 300px;
     border-radius: 10px;
     
 }
 input, button{
     margin-top: 20px;
     position: relative;
-    left: 70px;
+    left: 20px;
     text-align: center;
 }
 
 audio{
     position: relative;
     top: 20px;
-    left: 50px;
+    left: 15px;
+    width: 90%;
 }
 #search_button{
     border: none;
     background: none;
     position: relative;
-    left: 20px;
+    left: -30px;
     top: 10px;
 
 }
@@ -79,14 +80,13 @@ a{
     font-family: 'Yanone Kaffeesatz', sans-serif;
     text-decoration: none;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1rem;
     padding: 10px 20px;
 }
 a:hover{
     background-color: #C539B4;
     cursor: pointer;
-    border-radius: 20px;
-    width: 90%;
+    border-radius: 10px;
 
 }
 .search{
@@ -95,4 +95,22 @@ a:hover{
 }
 .search:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width: 800px){
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+    .music_section{
+        margin: 30px 0;
+    }
+    .disco{
+        background-size: 250%;
+        background-position: 50% 10%;
+    }
+    .songs_list{
+        width: 300px;
+    }
+    
 }
