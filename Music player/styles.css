@@ -1,18 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@200&display=swap');
 body{
-    margin: 50px auto;
     width: max-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    background-color: black;
+    
+}
+.disco{
+    background-image: url(/disco.gif);
+    background-repeat: no-repeat;
+    background-size:100%;
 }
 .music_section{
-    
+    margin-right: 40px;
     width: 400px;
     height: 700px;
-    box-shadow: 0 0 30px gray;
+    box-shadow: 0 0 20px #C539B4;
     border-radius: 10px;
-    background-image: url(/back.gif);
     background-position: bottom;
     background-repeat: no-repeat;
     background-size: contain;
     background-color: black;
+}
+.back{
+    background-image: url(/back.gif);
 }
 img{
     width: 400px;
@@ -22,7 +36,7 @@ img{
 input, button{
     margin-top: 20px;
     position: relative;
-    left: 40px;
+    left: 70px;
     text-align: center;
 }
 
@@ -32,41 +46,53 @@ audio{
     left: 50px;
 }
 #search_button{
-    background-color: #C539B4;
-    color: #fff;
     border: none;
-    width: 70px;
-    height: 30px;
-    border-radius: 20px;
-    font-size: 1rem;
-    box-shadow: 0 0 5px #fff;
+    background: none;
+    position: relative;
+    left: 20px;
+    top: 10px;
 
 }
 input[placeholder]{
+    font-size: 1rem;
     width: 250px;
-    height: 30px;
+    height: 31px;
     border-radius: 20px;
     border: none;
     box-shadow: 0 0 20px #C539B4;
+    text-align: center;
+    border-right: none;
 }
 
+
 .songs_list{
-    position: relative;
-    bottom: 700px;
-    right: 550px;
-    width: 500px;
+    width: max-content;
     background-color: black;
     display: flex;
     flex-direction: column;
     color: #fff;
     padding: 0;
     border-radius: 20px;
-    box-shadow: 0 0 30px gray;
+    box-shadow: 0 0 20px #C539B4;
 }
-p{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+a{
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     text-decoration: none;
     color: #fff;
     font-size: 1.5rem;
-    margin: 10px 20px;
+    padding: 10px 20px;
+}
+a:hover{
+    background-color: #C539B4;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 90%;
+
+}
+.search{
+    width: 30px;
+    
+}
+.search:hover{
+    cursor: pointer;
 }

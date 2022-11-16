@@ -1,24 +1,40 @@
 function gettingSongs(spotifyData){
-    const input = document.querySelector('input');
-    input.value = '';
-    let songs_list = document.querySelector('.songs_list');
-    const allSongs =  spotifyData.tracks.items
+    const  songsList = document.querySelector('.songs_list');
+    songsList.innerHTML = '';
+    document.querySelector('input').value = '';
+
+    let audio= document.querySelector('audio');
+    const allSongs =  spotifyData.tracks.items;
     for(song of allSongs){
-        const songUrl = song.preview_url
-        const songName = song.name
+        const songUrl = song.preview_url;
+        const songName = song.name;
         const songArea = document.querySelector('.songs_list');
-        const audioTag = document.createElement('p');
-        audioTag.setAttribute('href', songUrl)
+        const audioTag = document.createElement('a');
+        //audioTag.setAttribute('href', songUrl)
         audioTag.innerHTML = songName
         //console.log(songName)
         songArea.append(audioTag)
+        audioTag.addEventListener('click',()=>{
+            //console.log('URL', songUrl)
+            audio.setAttribute('src', songUrl);
+            audio.play();
+            audio.addEventListener('playing', ()=>{
+                document.querySelector('.music_section').classList.add('back');
+                document.querySelector('body').classList.add('disco');
+            });
+            
+            audio.addEventListener('ended', ()=>{
+                document.querySelector('.music_section').classList.remove('back');
+                document.querySelector('body').classList.remove('disco');
+            });
+            audio.addEventListener('pause', ()=>{
+                document.querySelector('.music_section').classList.remove('back');
+                document.querySelector('body').classList.remove('disco');
+            });
+            
+        });
     }
-    document.querySelectorAll('p').forEach(()=>{
-        addEventListener('click', function(event){
-            console.log(event)
-        })
-
-    })
+    
 }
 
 async function getApi(searchString){ 
@@ -33,7 +49,7 @@ async function getApi(searchString){
     const spotifyData = await spotifyResponse.json()
     //let music = document.querySelector('audio').setAttribute('src', spotifyData.tracks.items[0].preview_url);
     gettingSongs(spotifyData)
-    console.log(spotifyData);
+    //console.log(spotifyData);
 }
 
 
