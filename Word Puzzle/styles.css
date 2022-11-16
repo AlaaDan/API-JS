@@ -28,3 +28,8 @@ ul{
     margin: 0 ;
     
 }
+
+input:hover{
+    background-color: #FCDDB0;
+    cursor: pointer;
+}
